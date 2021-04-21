@@ -1,0 +1,17 @@
+{
+  "type": "mssql",
+  "host": "gpxdb.leapmind.com.br",
+  "port": 1433,
+  "username": "userdev",
+  "password": "leapmind",
+  "database": "GEOEXPLO_MA_DEMO_V4",
+  "entities": ["dist/entity/**/*.js", "src/entity/*.ts"],
+  "synchronize": false,
+  "options": {
+    "encrypt": true,
+    "enableArithAbort": true,
+    "cryptoCredentialsDetails": {
+      "minVersion": "TLSv1"
+    }
+  }
+}

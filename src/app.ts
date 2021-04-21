@@ -1,10 +1,22 @@
-import express , {Application, Request, Response, NextFunction } from 'express'
-import * as bodyParser from 'body-parser'
+import 'reflect-metadata';
 
-const app: Application = express();
+import express from 'express';
+import cors from 'cors';
+import FormularioRoutes from './routes/formulario.routes'
+import {createConnection} from 'typeorm';
+import errorMiddleware from './middleware/error.middleware';
 
-app.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.send("Hello");
-});
+const app = express();
 
-app.listen(5000, () => console.log("Server running."));
+createConnection();
+//middlewares 
+app.use(cors());
+app.use(express.json());
+app.use(errorMiddleware);
+app.use(express.urlencoded());
+
+//routes 
+app.use(FormularioRoutes);
+
+app.listen(5000);
+console.log('Server on Port',5000);

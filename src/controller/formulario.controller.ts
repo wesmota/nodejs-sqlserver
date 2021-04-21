@@ -1,13 +1,13 @@
-import {NextFunction, Request,Response} from 'express';
+import { Request,Response} from 'express';
 import {getRepository} from 'typeorm';
 import {Formulario} from '../entity/formulario';
 
-export const listarFormulario = async(req:Request,res:Response, next: NextFunction):Promise<Response>=>{
+export const listarFormulario = async(req:Request,res:Response):Promise<Response>=>{
     const results = await getRepository(Formulario).find();
     return res.json(results);
 };
 
-export const obterFormulario = async(req:Request,res:Response, next: NextFunction):Promise<Response> =>{
+export const obterFormulario = async(req:Request,res:Response):Promise<Response> =>{
     
     const id = req.params.id;
     

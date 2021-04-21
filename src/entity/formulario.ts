@@ -3,12 +3,12 @@ import {Entity,Column,PrimaryGeneratedColumn, BaseEntity} from "typeorm";
 export class Formulario extends BaseEntity {
 
     @PrimaryGeneratedColumn()
-    id:number;
+  id: number;
 
     @Column()
-    nome:string;
+  nome: string;
 
     @Column()
-    descricao:string;
+  descricao: string;
 
 }

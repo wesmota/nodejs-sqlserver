@@ -5,7 +5,7 @@
   "username": "userdev",
   "password": "leapmind",
   "database": "GEOEXPLO_MA_DEMO_V4",
-  "entities": ["dist/entity/**/*.js", "src/entity/*.ts"],
+  "entities": ["dist/entity/*.js", "src/entity/*.ts"],
   "synchronize": false,
   "options": {
     "encrypt": true,
